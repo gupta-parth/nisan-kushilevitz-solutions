@@ -1,0 +1,53 @@
+\documentclass{article} % This command is used to set the type of document you are working on such as an article, book, or presenation
+
+\usepackage{geometry} % This package allows the editing of the page layout
+\usepackage{amsmath, amsthm, amssymb}  % This package allows the use of a large range of mathematical formula, commands, and symbols
+\usepackage{graphicx}  % This package allows the importing of images
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{solution}[2][Solution]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newcommand{\sol}{\textbf{Solution}:} %Use if you want a boldface solution line
+\newcommand{\maketitletwo}[2][]{\begin{center}
+        \Large{\textbf{Communication Complexity Solutions}}
+        \vspace{5pt}
+        
+        \normalsize{Parth Gupta 
+        
+        \today} 
+        \vspace{15pt}
+        
+\end{center}}
+\begin{document}
+    \maketitletwo[5]  % Optional argument is assignment number
+    %Keep a blank space between maketitletwo and \question[1]
+    
+    \section{Chapter 1}
+    \begin{exercise}{1.5}
+        Let $S_x$ denote the sum of $x$, and similarly let $S_y$ denote the sum of $y$. A protocol to compute $AVG(x, y)$ is as follows: Alice will send $S_x$ ($\log n^2$ bits) and $|x|$ ($\log n$ bits) to Bob and Bob will send $S_y$ and $|y|$ to Alice. Both parties can now report the average as $\frac{S_x + S_y}{|x| + |y|}$. Total number of bits communicated is $2(\log n^2 + \log n) = 6\log n = O(\log n)$.
+    \end{exercise}
+
+    \begin{exercise}{1.9}
+       Each value in $\text{Range(f)}$ corresponds to a leaf in the decision tree view of a protocol. So any decision tree that computes $f$ must have height at least $\log(|\text{Range}(f)|)$ implying that $D(f) \geq \log(|\text{Range}(f)|)$. 
+    \end{exercise}
+
+    \begin{exercise}{1.18}
+        
+    \end{exercise}
+
+    \begin{exercise}{1.26} Let $R = A \times B$ be a 1-monochromatic rectangle. 
+        
+    \end{exercise}
+\end{document}
