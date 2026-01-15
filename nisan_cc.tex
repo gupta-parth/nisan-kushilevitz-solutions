@@ -43,11 +43,24 @@
        Each value in $\text{Range(f)}$ corresponds to a leaf in the decision tree view of a protocol. So any decision tree that computes $f$ must have height at least $\log(|\text{Range}(f)|)$ implying that $D(f) \geq \log(|\text{Range}(f)|)$. 
     \end{exercise}
 
-    \begin{exercise}{1.18}
+    \begin{exercise}{1.22} A fooling set of size $2^n$ is $S = \{(x, x) : x \in \{0,1\}^n\}$. This is a fooling set because for any two distinct elements $(x, x), (y, y) \in S$, we have $GT(x, y) = 1$ if $x > y$ and $GT(y, x) = 1$ if $y > x$. Thus, $D(GT)$ is at least $\log |S| = \log 2^n = n$. By also counting the 1-rectangles, we have $D(GT) = n + 1$. 
         
     \end{exercise}
 
-    \begin{exercise}{1.26} Let $R = A \times B$ be a 1-monochromatic rectangle. 
+    \begin{exercise}{1.26} Let $R = A \times B$ be a 1-monochromatic rectangle. For every set $X \in A$, $Y \in B$, we have $X \cap Y = \emptyset$. Let $S = \bigcup_{X \in A} X$. Then $Y \subseteq S^c$ for all $Y \in B$. Thus, all sets in $B$ are subsets of $S^c$. The number of possible sets in $B$ is at most the number of subsets of $S^c$, which is at most $2^{n - |S|}$. Also, the number of possible sets in $A$ is at most the number of subsets of $S$, which is at most $2^{|S|}$. Thus, the size of the largest 1-monochromatic rectangle is at most $|R| = |A| \times |B| \leq 2^{|S|} \times 2^{n - |S|} = 2^n$.
+
+    The number of 1s in the communication matrix $M_{DISJ}$ is $\sum_{k=0}^{n} \binom{n}{k} 2^{n-k} = 3^n$ by the binomial theorem. So we need at least $\frac{3^n}{2^n} = \left(\frac{3}{2}\right)^n$ 1-monochromatic rectangles to cover all the 1s in $M_{DISJ}$. Therefore, we have $D(DISJ) \geq \log\left(\left(\frac{3}{2}\right)^n\right) = n \log\left(\frac{3}{2}\right)$
+    \end{exercise}
+
+    \begin{exercise}{1.31}
         
+    \end{exercise}
+
+    \section{Chapter 2}
+    \begin{exercise}{2.6}
+        We want to show that $D(f) \leq C^z(f) +1$ where $z \in \{0,1\}$. Without loss of generality, let us assume that $z = 1$. For each rectangle in the cover of $f^{-1}(1)$, Alice sends a bit to Bob indicating whether the rectangle intersects her input $x$. Now Bob similarly checks the rectangles intersecting his input $y$ and outputs 0 if no rectangle intersects $x$ and also $y$, and 1 otherwise. The total number of bits communicated is $C^1(f) + 1$.
+    \end{exercise}
+    \begin{exercise}{2.7}
+        By exercise 1.22, we have that there is a $0$-fooling set of size $2^n$ for the GT function. Thus, we have that $C^0(GT) \geq 2^n$ and hence $N^0(GT) \geq n$. We can also construct a 1-fooling set $S = \{(x, x+1): x\in\{0,1\}^n\}$ of size $2^n$ for the GT function. Thus, we have that $C^1(GT) \geq 2^n$ and hence $N^1(GT) \geq n$.
     \end{exercise}
 \end{document}
