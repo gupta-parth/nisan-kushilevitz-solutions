@@ -52,7 +52,7 @@
     The number of 1s in the communication matrix $M_{DISJ}$ is $\sum_{k=0}^{n} \binom{n}{k} 2^{n-k} = 3^n$ by the binomial theorem. So we need at least $\frac{3^n}{2^n} = \left(\frac{3}{2}\right)^n$ 1-monochromatic rectangles to cover all the 1s in $M_{DISJ}$. Therefore, we have $D(DISJ) \geq \log\left(\left(\frac{3}{2}\right)^n\right) = n \log\left(\frac{3}{2}\right)$
     \end{exercise}
 
-    \begin{exercise}{1.31}
+    \begin{exercise}{1.31} Let $T$ be the number of distinct rows. In any boolean matrix, we have $T \leq 2^r$ where $r$ is the rank of the matrix. In this case, we have that $T = 2^r$ where $r$ is the rank of $f$ and so $D(f) \geq \log (rk(f)) = \log \log T = \log \log |X|$. For the second part, assume that the rows and columns are lexicographically ordered. Alice can send Bob the index of the row corresponding to her input which is encoded in at most $\log T \leq rk(f)$ and then Bob can send Alice the answer. This takes at most $rk(f) + 1$ bits of communication. 
         
     \end{exercise}
 
@@ -62,5 +62,22 @@
     \end{exercise}
     \begin{exercise}{2.7}
         By exercise 1.22, we have that there is a $0$-fooling set of size $2^n$ for the GT function. Thus, we have that $C^0(GT) \geq 2^n$ and hence $N^0(GT) \geq n$. We can also construct a 1-fooling set $S = \{(x, x+1): x\in\{0,1\}^n\}$ of size $2^n$ for the GT function. Thus, we have that $C^1(GT) \geq 2^n$ and hence $N^1(GT) \geq n$.
+    \end{exercise}
+
+    \begin{exercise}{2.21}
+
+    \end{exercise}
+
+    \begin{exercise}{2.22}
+        
+    \end{exercise}
+
+    \begin{exercise}{2.23}
+        
+    \end{exercise}
+
+    \section{Chapter 3}
+    \begin{exercise}{3.6}
+        The communication is $O(\log n)$ bits. If $a = b$, then Bob outputs 1 and if $a \neq b$, then the probability that $a \bmod p = b \bmod p$ is $1/n$ since the number of prime divisors of $a - b$ is at most $n$ as $a - b \leq 2^n$. 
     \end{exercise}
 \end{document}
